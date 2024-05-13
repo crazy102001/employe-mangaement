@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h3>Employee Details</h3>
+<table class="table table-bordered border-secondary">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Age</th>
+        <th>Edit</th>
+    </tr>
+
+    <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.department}}</td>
+        <td>{{emp.age}}</td>
+
+        <td><a href="{% url 'empl:edit' emp.id %}" class="btn btn-warning">Edit</a></td>
+
+
+    </tr>
+
+
+
+{% endblock %}
+    </table>

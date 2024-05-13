@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+<h3>Employee Details</h3>
+<table class="table table-bordered border-primary">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Age</th>
+        <th>Details</th>
+<!--       <th>Edit</th>-->
+
+        <th>Delete</th>
+    </tr>
+    {% for i in emp %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.department}}</td>
+        <td>{{i.age}}</td>
+
+      <td><a href="{% url 'empl:details' i.id %}" class="btn btn-danger">Details</a></td>
+
+        <td><a href="{% url 'empl:del' i.id %}" class="btn btn-danger">Delete</a></td>
+
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}
